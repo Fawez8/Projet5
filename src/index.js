@@ -1,17 +1,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+
 import * as serviceWorker from './serviceWorker';
+import Myproduct from './ProductTable';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Myproduct />
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+const products = [
+  {
+    Name : 'basket',
+    Categoty : 'clothes',
+    Price : '100 TND'
+  },
+
+  {
+    Name : 'Trousers',
+    Categoty : 'clothes',
+    Price : '70 TND'
+  },
+
+  {
+    Name : 'Watch',
+    Categoty : 'Electronic',
+    Price : '250 TND'
+  },
+
+  {
+    Name : 'Ipad',
+    Categoty : 'Electronic',
+    Price : '1000 TND'
+  }
+];
+
+<ProductTable data={products}/>
+
