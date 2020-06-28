@@ -1,18 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-
 import * as serviceWorker from './serviceWorker';
 import Myproduct from './ProductTable';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Myproduct />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-serviceWorker.unregister();
 
 const products = [
   {
@@ -40,5 +31,15 @@ const products = [
   }
 ];
 
-<ProductTable data={products}/>
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Myproduct products={products}/>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+serviceWorker.unregister();
+
+
 
