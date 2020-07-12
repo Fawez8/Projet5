@@ -1,28 +1,30 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-  const Myproduct = (products) => {
+  const ProductTable = ({products}) => {
 
   
     return (
         <div>
-           <table style="width:100%">
+           <table style={{width: '100%'}}>
             <tr>
               <th>Name</th>
               <th>Category</th>
               <th>Price</th>
             </tr>
+{
+  products.map(item=>{
+    return(
+      <tr style={{textAlign: 'center'}}>
+      <td>{item.Name}</td>
+      <td>{item.Category}</td>
+      <td>{item.Price}</td>
 
-            <div>
-              let affich = products.map(
-                (el) => {
 
-                  console.log(el)
-
-                } 
-                
-                )
-              
-            </div>
+      </tr>
+    )
+  })
+}
 
            </table>
    
@@ -31,4 +33,8 @@ import React from 'react';
     )
 
 }
-export default Myproduct;
+
+ProductTable.propTypes = {
+  products: PropTypes.any
+}
+export default ProductTable;
